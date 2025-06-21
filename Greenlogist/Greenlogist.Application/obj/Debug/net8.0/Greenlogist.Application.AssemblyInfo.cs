@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Greenlogist.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67d7fbbc1a09f6170509968a92a6213bac006956")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+237040f427cd08dab448958a40b61d82699b87bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("Greenlogist.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Greenlogist.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
