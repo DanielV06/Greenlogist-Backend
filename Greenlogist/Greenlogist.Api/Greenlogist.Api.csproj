@@ -11,4 +11,9 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Greenlogist.Application\Greenlogist.Application.csproj" />
+      <ProjectReference Include="..\Greenlogist.Infrastructure\Greenlogist.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>

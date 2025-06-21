@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Greenlogist.Domain\Greenlogist.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

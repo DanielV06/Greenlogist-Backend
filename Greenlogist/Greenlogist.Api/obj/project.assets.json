@@ -107,6 +107,42 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Greenlogist.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Greenlogist.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Greenlogist.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Greenlogist.Application.dll": {}
+        }
+      },
+      "Greenlogist.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Greenlogist.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Greenlogist.Domain.dll": {}
+        }
+      },
+      "Greenlogist.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Greenlogist.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Greenlogist.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Greenlogist.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -473,10 +509,27 @@
         "swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "Greenlogist.Application/1.0.0": {
+      "type": "project",
+      "path": "../Greenlogist.Application/Greenlogist.Application.csproj",
+      "msbuildProject": "../Greenlogist.Application/Greenlogist.Application.csproj"
+    },
+    "Greenlogist.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Greenlogist.Domain/Greenlogist.Domain.csproj",
+      "msbuildProject": "../Greenlogist.Domain/Greenlogist.Domain.csproj"
+    },
+    "Greenlogist.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Greenlogist.Infrastructure/Greenlogist.Infrastructure.csproj",
+      "msbuildProject": "../Greenlogist.Infrastructure/Greenlogist.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Greenlogist.Application >= 1.0.0",
+      "Greenlogist.Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 8.0.10",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
@@ -507,7 +560,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\USUARIO\\RiderProjects\\Greenlogist-Backend\\Greenlogist\\Greenlogist.Application\\Greenlogist.Application.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Greenlogist-Backend\\Greenlogist\\Greenlogist.Application\\Greenlogist.Application.csproj"
+            },
+            "C:\\Users\\USUARIO\\RiderProjects\\Greenlogist-Backend\\Greenlogist\\Greenlogist.Infrastructure\\Greenlogist.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Greenlogist-Backend\\Greenlogist\\Greenlogist.Infrastructure\\Greenlogist.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
