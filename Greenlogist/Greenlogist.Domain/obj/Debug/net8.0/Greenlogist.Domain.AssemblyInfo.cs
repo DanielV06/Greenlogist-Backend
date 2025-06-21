@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Greenlogist.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1cd5cf95b3b8188aef82fc0880a7b06b320ab41f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67d7fbbc1a09f6170509968a92a6213bac006956")]
 [assembly: System.Reflection.AssemblyProductAttribute("Greenlogist.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Greenlogist.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

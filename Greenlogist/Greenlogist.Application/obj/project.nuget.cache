@@ -1,8 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "wHmdn7ncMbw=",
+  "dgSpecHash": "piCsoVatDgY=",
   "success": true,
   "projectFilePath": "C:\\Users\\USUARIO\\RiderProjects\\Greenlogist-Backend\\Greenlogist\\Greenlogist.Application\\Greenlogist.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\10.0.0-preview.5.25277.114\\microsoft.aspnetcore.cryptography.internal.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\10.0.0-preview.5.25277.114\\microsoft.aspnetcore.cryptography.keyderivation.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\10.0.0-preview.5.25277.114\\microsoft.extensions.caching.abstractions.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\10.0.0-preview.5.25277.114\\microsoft.extensions.dependencyinjection.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.0-preview.5.25277.114\\microsoft.extensions.dependencyinjection.abstractions.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.extensions.identity.core\\10.0.0-preview.5.25277.114\\microsoft.extensions.identity.core.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.extensions.identity.stores\\10.0.0-preview.5.25277.114\\microsoft.extensions.identity.stores.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.extensions.logging\\10.0.0-preview.5.25277.114\\microsoft.extensions.logging.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.0-preview.5.25277.114\\microsoft.extensions.logging.abstractions.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.extensions.options\\10.0.0-preview.5.25277.114\\microsoft.extensions.options.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.0-preview.5.25277.114\\microsoft.extensions.primitives.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\system.diagnostics.diagnosticsource\\10.0.0-preview.5.25277.114\\system.diagnostics.diagnosticsource.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\system.memory\\4.6.3\\system.memory.4.6.3.nupkg.sha512"
+  ],
   "logs": []
 }
