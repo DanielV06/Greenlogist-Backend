@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenlogist.Domain", "Greenlogist.Domain\Greenlogist.Domain.csproj", "{436BB7F1-06CB-4762-A07C-91BE20CE338B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenlogist.Application", "Greenlogist.Application\Greenlogist.Application.csproj", "{20A92334-8ABB-469E-AB3C-051DA35397F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenlogist.Infrastructure", "Greenlogist.Infrastructure\Greenlogist.Infrastructure.csproj", "{D4C07090-D07C-48CC-830F-E1E62E654602}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenlogist.Api", "Greenlogist.Api\Greenlogist.Api.csproj", "{EFBD303C-2BC9-43F1-BF4E-F775549EAA14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{436BB7F1-06CB-4762-A07C-91BE20CE338B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{436BB7F1-06CB-4762-A07C-91BE20CE338B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{436BB7F1-06CB-4762-A07C-91BE20CE338B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{436BB7F1-06CB-4762-A07C-91BE20CE338B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20A92334-8ABB-469E-AB3C-051DA35397F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A92334-8ABB-469E-AB3C-051DA35397F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A92334-8ABB-469E-AB3C-051DA35397F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A92334-8ABB-469E-AB3C-051DA35397F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4C07090-D07C-48CC-830F-E1E62E654602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C07090-D07C-48CC-830F-E1E62E654602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C07090-D07C-48CC-830F-E1E62E654602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C07090-D07C-48CC-830F-E1E62E654602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFBD303C-2BC9-43F1-BF4E-F775549EAA14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFBD303C-2BC9-43F1-BF4E-F775549EAA14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFBD303C-2BC9-43F1-BF4E-F775549EAA14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFBD303C-2BC9-43F1-BF4E-F775549EAA14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
