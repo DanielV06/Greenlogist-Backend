@@ -1,3 +1,5 @@
+using Greenlogist.Application.Interfaces;
+using Greenlogist.Application.Services;
 using Greenlogist.Domain;
 using Greenlogist.Infrastructure;
 using Microsoft.AspNetCore.Identity;
@@ -15,6 +17,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // 2. Configure Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+// 3. Registrar nuestros servicios de aplicación (¡NUEVA LÍNEA!)
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 
 builder.Services.AddControllers();
