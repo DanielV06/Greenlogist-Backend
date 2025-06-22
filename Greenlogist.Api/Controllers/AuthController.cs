@@ -15,10 +15,10 @@ public class AuthController : ControllerBase
         _authService = authService;
     }
 
-    [HttpPost("register")] // Endpoint: POST /api/auth/register
+    // --- Endpoint de Registro (ya existente) ---
+    [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterRequest request)
     {
-        // La validación de [Required] y [EmailAddress] del DTO ocurre automáticamente
         if (!ModelState.IsValid)
         {
             return BadRequest(ModelState);
@@ -28,7 +28,6 @@ public class AuthController : ControllerBase
 
         if (!result.Succeeded)
         {
-            // Añadimos los errores que vienen de nuestro servicio para que el frontend los vea
             foreach (var error in result.Errors)
             {
                 ModelState.AddModelError(string.Empty, error);
@@ -37,5 +36,26 @@ public class AuthController : ControllerBase
         }
 
         return Ok(new { Message = "User registered successfully" });
+    }
+    
+    // --- NUEVO ENDPOINT DE LOGIN ---
+    [HttpPost("login")] // Endpoint: POST /api/auth/login
+    public async Task<IActionResult> Login([FromBody] LoginRequest request)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        var result = await _authService.LoginAsync(request.Email, request.Password);
+
+        if (!result.Succeeded)
+        {
+            // Para login, es mejor devolver un error 401 Unauthorized si las credenciales son inválidas.
+            return Unauthorized(new { Message = "Invalid credentials." });
+        }
+        
+        // Si el login es exitoso, devolvemos el token.
+        return Ok(new { Token = result.Token });
     }
 }
