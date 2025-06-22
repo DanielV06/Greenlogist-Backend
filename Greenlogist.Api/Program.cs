@@ -2,7 +2,7 @@ using Greenlogist.Application.Interfaces;
 using Greenlogist.Application.Services;
 using Greenlogist.Domain;
 using Greenlogist.Infrastructure;
-using Greenlogist.Infrastructure.Authentication; // <-- AÑADIR ESTE USING
+using Greenlogist.Infrastructure.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,11 +17,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // 2. Configure Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddSignInManager(); // <-- ¡ESTA ES LA LÍNEA QUE FALTABA!
 
 // 3. Registrar nuestros servicios de aplicación
 builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>(); // <-- AÑADIR ESTA LÍNEA
+builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
