@@ -21,7 +21,7 @@ public class AuthService : IAuthService
         _jwtTokenGenerator = jwtTokenGenerator;
     }
 
-    // --- El método de Registro sigue igual que antes ---
+    // --- El método de Registro ---
     public async Task<AuthResult> RegisterAsync(string fullName, string email, string password)
     {
         var existingUser = await _userManager.FindByEmailAsync(email);
