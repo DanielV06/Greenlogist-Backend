@@ -1,0 +1,5 @@
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Infrastructure\obj\Debug\net8.0\Greenlogist.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Infrastructure\obj\Debug\net8.0\Greenlogist.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Infrastructure\obj\Debug\net8.0\Greenlogist.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Infrastructure\obj\Debug\net8.0\Greenlogist.Infrastructure.AssemblyInfo.cs
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Infrastructure\obj\Debug\net8.0\Greenlogist.Infrastructure.csproj.CoreCompileInputs.cache
