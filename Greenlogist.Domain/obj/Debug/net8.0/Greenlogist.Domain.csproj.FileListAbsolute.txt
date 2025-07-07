@@ -1,0 +1,4 @@
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\obj\Debug\net8.0\Greenlogist.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\obj\Debug\net8.0\Greenlogist.Domain.AssemblyInfoInputs.cache
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\obj\Debug\net8.0\Greenlogist.Domain.AssemblyInfo.cs
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\obj\Debug\net8.0\Greenlogist.Domain.csproj.CoreCompileInputs.cache
