@@ -1,61 +1,52 @@
-using Greenlogist.Api.DTOs;
-using Greenlogist.Application.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Greenlogist.Application.Interfaces;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
-namespace Greenlogist.Api.Controllers;
-
-[ApiController]
-[Route("api/[controller]")] // Esto se traduce en la ruta: /api/auth
-public class AuthController : ControllerBase
+namespace Greenlogist.Infrastructure.Security
 {
-    private readonly IAuthService _authService;
-
-    public AuthController(IAuthService authService)
+    /// <summary>
+    /// Implementación de IJwtTokenGenerator para crear tokens JWT.
+    /// </summary>
+    public class JwtTokenGenerator : IJwtTokenGenerator
     {
-        _authService = authService;
-    }
+        private readonly IConfiguration _configuration;
 
-    // --- Endpoint de Registro  ---
-    [HttpPost("register")]
-    public async Task<IActionResult> Register([FromBody] RegisterRequest request)
-    {
-        if (!ModelState.IsValid)
+        public JwtTokenGenerator(IConfiguration configuration)
         {
-            return BadRequest(ModelState);
+            _configuration = configuration;
         }
 
-        var result = await _authService.RegisterAsync(request.FullName, request.Email, request.Password);
-
-        if (!result.Succeeded)
+        public string GenerateToken(Guid userId, string email, string role)
         {
-            foreach (var error in result.Errors)
+            var jwtSettings = _configuration.GetSection("JwtSettings");
+            var key = Encoding.ASCII.GetBytes(jwtSettings["SecretKey"] ?? throw new InvalidOperationException("JwtSettings:SecretKey no configurado."));
+            var issuer = jwtSettings["Issuer"];
+            var audience = jwtSettings["Audience"];
+
+            var claims = new[]
             {
-                ModelState.AddModelError(string.Empty, error);
-            }
-            return BadRequest(ModelState);
-        }
+                new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, email),
+                new Claim(ClaimTypes.Role, role), // Añadir el rol como un claim
+                new Claim("userId", userId.ToString()) // Claim personalizado para el ID del usuario
+            };
 
-        return Ok(new { Message = "User registered successfully" });
-    }
-    
-    // --- NUEVO ENDPOINT DE LOGIN ---
-    [HttpPost("login")] // Endpoint: POST /api/auth/login
-    public async Task<IActionResult> Login([FromBody] LoginRequest request)
-    {
-        if (!ModelState.IsValid)
-        {
-            return BadRequest(ModelState);
-        }
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.UtcNow.AddHours(Convert.ToDouble(jwtSettings["ExpirationHours"])),
+                Issuer = issuer,
+                Audience = audience,
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
 
-        var result = await _authService.LoginAsync(request.Email, request.Password);
-
-        if (!result.Succeeded)
-        {
-            // Para login, es mejor devolver un error 401 Unauthorized si las credenciales son inválidas.
-            return Unauthorized(new { Message = "Invalid credentials." });
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
-        
-        // Si el login es exitoso, devolvemos el token.
-        return Ok(new { Token = result.Token });
     }
 }

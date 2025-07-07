@@ -1,4 +1,4 @@
-@Greenlogist.Api_HostAddress = http://localhost:5164
+@Greenlogist.Api_HostAddress = http://localhost:5182
 
 GET {{Greenlogist.Api_HostAddress}}/weatherforecast/
 Accept: application/json
