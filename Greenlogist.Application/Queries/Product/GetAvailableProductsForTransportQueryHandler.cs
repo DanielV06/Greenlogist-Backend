@@ -6,7 +6,6 @@ using Greenlogist.Domain.Aggregates.User; // To validate ProducerId
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Greenlogist.Backend.Greenlogist.Application.DTOs.Product;
 using ApplicationException = Greenlogist.Application.Common.ApplicationException; // To get user ID from token
 
 

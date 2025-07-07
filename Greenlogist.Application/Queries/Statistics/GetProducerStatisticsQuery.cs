@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Greenlogist.Application.DTOs.Statistics;
-using Greenlogist.Backend.Greenlogist.Application.DTOs.Statistics;
 
 namespace Greenlogist.Application.Queries.Statistics
 {

@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using Greenlogist.Application.DTOs.Product;
 using System.Collections.Generic;
-using Greenlogist.Backend.Greenlogist.Application.DTOs.Product;
 
 namespace Greenlogist.Application.Queries.Product
 {
