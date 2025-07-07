@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Greenlogist.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:Greenlogist.Domain.Aggregates.Order.Order">
+            <summary>
+            Represents the 'Order' aggregate root entity.
+            </summary>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.Order.Order.#ctor(System.Guid,System.Guid,System.Guid,System.Collections.Generic.IEnumerable{Greenlogist.Domain.Aggregates.Order.OrderItem})">
+            <summary>
+            Constructor for creating a new order.
+            </summary>
+            <param name="id">Unique identifier for the order.</param>
+            <param name="consumerId">ID of the consumer who placed the order.</param>
+            <param name="producerId">ID of the producer fulfilling the order.</param>
+            <param name="orderItems">List of items included in the order.</param>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.Order.Order.AddItem(Greenlogist.Domain.Aggregates.Order.OrderItem)">
+            <summary>
+            Adds an item to the order.
+            </summary>
+            <param name="orderItem">The order item to add.</param>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.Order.Order.UpdateStatus(Greenlogist.Domain.Aggregates.Order.OrderStatus)">
+            <summary>
+            Updates the status of the order.
+            </summary>
+            <param name="newStatus">The new status for the order.</param>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.Order.Order.CalculateTotalAmount">
+            <summary>
+            Calculates the total amount of the order based on its items.
+            </summary>
+        </member>
+        <member name="T:Greenlogist.Domain.Aggregates.Order.OrderItem">
+            <summary>
+            Represents an item within an 'Order'. This is an entity within the Order aggregate.
+            </summary>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.Order.OrderItem.#ctor(System.Guid,System.Guid,System.String,Greenlogist.Domain.ValueObjects.Quantity,Greenlogist.Domain.ValueObjects.Price)">
+            <summary>
+            Constructor for creating a new order item.
+            </summary>
+            <param name="id">Unique identifier for the order item.</param>
+            <param name="productId">ID of the product being ordered.</param>
+            <param name="productName">Name of the product (denormalized).</param>
+            <param name="quantity">Quantity of the product (as a value object).</param>
+            <param name="unitPrice">Unit price of the product (as a value object).</param>
+        </member>
+        <member name="T:Greenlogist.Domain.Aggregates.Product.Product">
+            <summary>
+            Represents the 'Product' aggregate root entity.
+            </summary>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.Product.Product.#ctor(System.Guid,System.Guid,System.String,System.String,Greenlogist.Domain.ValueObjects.Quantity,Greenlogist.Domain.ValueObjects.Price)">
+            <summary>
+            Constructor for creating a new product.
+            </summary>
+            <param name="id">Unique identifier for the product.</param>
+            <param name="producerId">ID of the producer who owns this product.</param>
+            <param name="name">Name of the product.</param>
+            <param name="description">Description of the product.</param>
+            <param name="quantity">Quantity and unit of the product (as a value object).</param>
+            <param name="price">Price of the product (as a value object).</param>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.Product.Product.UpdateProductDetails(System.String,System.String,Greenlogist.Domain.ValueObjects.Quantity,Greenlogist.Domain.ValueObjects.Price)">
+            <summary>
+            Updates the product's details.
+            </summary>
+            <param name="name">New product name.</param>
+            <param name="description">New product description.</param>
+            <param name="quantity">New quantity and unit (as a value object).</param>
+            <param name="price">New price (as a value object).</param>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.Product.Product.ReduceQuantity(System.Decimal)">
+            <summary>
+            Reduces the quantity of the product (e.g., after a sale or transport).
+            </summary>
+            <param name="amount">The amount to reduce.</param>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.Product.Product.IncreaseQuantity(System.Decimal)">
+            <summary>
+            Increases the quantity of the product (e.g., new stock).
+            </summary>
+            <param name="amount">The amount to increase.</param>
+        </member>
+        <member name="T:Greenlogist.Domain.Aggregates.Shipping.ShippingRequest">
+            <summary>
+            Represents the 'ShippingRequest' aggregate root entity.
+            </summary>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.Shipping.ShippingRequest.#ctor(System.Guid,System.Guid,System.Guid,Greenlogist.Domain.ValueObjects.Quantity,Greenlogist.Domain.ValueObjects.Location,Greenlogist.Domain.ValueObjects.Location,System.DateTime,System.String)">
+            <summary>
+            Constructor for creating a new shipping request.
+            </summary>
+            <param name="id">Unique identifier for the shipping request.</param>
+            <param name="producerId">ID of the producer making the request.</param>
+            <param name="productId">ID of the product to be transported.</param>
+            <param name="quantity">Quantity of the product (as a value object).</param>
+            <param name="origin">Origin location (as a value object).</param>
+            <param name="destination">Destination location (as a value object).</param>
+            <param name="requiredDate">Requested date for transport.</param>
+            <param name="specialInstructions">Special instructions for the transport.</param>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.Shipping.ShippingRequest.UpdateStatus(Greenlogist.Domain.Aggregates.Shipping.ShippingStatus)">
+            <summary>
+            Updates the status of the shipping request.
+            </summary>
+            <param name="newStatus">The new status for the shipping request.</param>
+        </member>
+        <member name="T:Greenlogist.Domain.Aggregates.User.User">
+            <summary>
+            Representa la entidad raíz del agregado 'User'.
+            </summary>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.User.User.#ctor(System.Guid,System.String,Greenlogist.Domain.ValueObjects.Email,Greenlogist.Domain.ValueObjects.PasswordHash,Greenlogist.Domain.Aggregates.User.UserRole)">
+            <summary>
+            Constructor para crear un nuevo usuario.
+            </summary>
+            <param name="id">Identificador único del usuario.</param>
+            <param name="fullName">Nombre completo del usuario.</param>
+            <param name="email">Correo electrónico del usuario (como objeto de valor).</param>
+            <param name="passwordHash">Hash de la contraseña del usuario (como objeto de valor).</param>
+            <param name="role">Rol del usuario (Consumidor o Productor).</param>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.User.User.UpdateProfile(System.String,System.String,System.String)">
+            <summary>
+            Actualiza la información del perfil del usuario.
+            </summary>
+            <param name="fullName">Nuevo nombre completo.</param>
+            <param name="description">Nueva descripción.</param>
+            <param name="profileImageUrl">Nueva URL de la imagen de perfil.</param>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.User.User.ChangeEmail(Greenlogist.Domain.ValueObjects.Email)">
+            <summary>
+            Cambia el correo electrónico del usuario.
+            </summary>
+            <param name="newEmail">El nuevo correo electrónico (como objeto de valor).</param>
+        </member>
+        <member name="M:Greenlogist.Domain.Aggregates.User.User.ChangePassword(Greenlogist.Domain.ValueObjects.PasswordHash)">
+            <summary>
+            Cambia la contraseña del usuario.
+            </summary>
+            <param name="newPasswordHash">El nuevo hash de la contraseña (como objeto de valor).</param>
+        </member>
+        <member name="T:Greenlogist.Domain.Common.Entity">
+            <summary>
+            Clase base abstracta para todas las entidades de dominio.
+            Proporciona un identificador único (Guid) y manejo de eventos de dominio.
+            </summary>
+        </member>
+        <member name="M:Greenlogist.Domain.Common.Entity.AddDomainEvent(Greenlogist.Domain.Common.IDomainEvent)">
+            <summary>
+            Añade un evento de dominio a la lista de eventos.
+            </summary>
+            <param name="eventItem">El evento de dominio a añadir.</param>
+        </member>
+        <member name="M:Greenlogist.Domain.Common.Entity.RemoveDomainEvent(Greenlogist.Domain.Common.IDomainEvent)">
+            <summary>
+            Elimina un evento de dominio de la lista.
+            </summary>
+            <param name="eventItem">El evento de dominio a eliminar.</param>
+        </member>
+        <member name="M:Greenlogist.Domain.Common.Entity.ClearDomainEvents">
+            <summary>
+            Borra todos los eventos de dominio de la entidad.
+            </summary>
+        </member>
+        <member name="T:Greenlogist.Domain.Common.IAggregateRoot">
+            <summary>
+            Interfaz de marcador para las raíces de agregados en Domain-Driven Design.
+            Las raíces de agregados son las únicas entidades a las que se puede hacer referencia directamente
+            desde fuera del agregado.
+            </summary>
+        </member>
+        <member name="T:Greenlogist.Domain.Common.IDomainEvent">
+            <summary>
+            Interfaz de marcador para eventos de dominio.
+            Los eventos de dominio representan algo significativo que ha ocurrido en el dominio.
+            </summary>
+        </member>
+        <member name="T:Greenlogist.Domain.Common.ValueObject">
+            <summary>
+            Clase base abstracta para todos los objetos de valor de dominio.
+            Proporciona una implementación de igualdad basada en componentes.
+            </summary>
+        </member>
+        <member name="M:Greenlogist.Domain.Common.ValueObject.GetEqualityComponents">
+            <summary>
+            Obtiene los componentes que se utilizarán para determinar la igualdad.
+            </summary>
+            <returns>Una colección de objetos que representan los componentes del objeto de valor.</returns>
+        </member>
+        <member name="M:Greenlogist.Domain.Common.ValueObject.Equals(System.Object)">
+            <summary>
+            Determina si dos objetos de valor son iguales.
+            </summary>
+            <param name="obj">El objeto a comparar con el objeto actual.</param>
+            <returns>True si los objetos de valor son iguales, false en caso contrario.</returns>
+        </member>
+        <member name="M:Greenlogist.Domain.Common.ValueObject.GetHashCode">
+            <summary>
+            Devuelve el código hash para este objeto de valor.
+            </summary>
+            <returns>Un código hash para el objeto de valor actual.</returns>
+        </member>
+        <member name="T:Greenlogist.Domain.Exceptions.DomainException">
+            <summary>
+            Excepción base para errores relacionados con las reglas de negocio del dominio.
+            </summary>
+        </member>
+        <member name="T:Greenlogist.Domain.Repositories.IOrderRepository">
+            <summary>
+            Repository interface for the 'Order' aggregate.
+            Defines contracts for order persistence and retrieval.
+            </summary>
+        </member>
+        <member name="T:Greenlogist.Domain.Repositories.IProductRepository">
+            <summary>
+            Repository interface for the 'Product' aggregate.
+            Defines contracts for product persistence and retrieval.
+            </summary>
+        </member>
+        <member name="T:Greenlogist.Domain.Repositories.IShippingRequestRepository">
+            <summary>
+            Repository interface for the 'ShippingRequest' aggregate.
+            Defines contracts for shipping request persistence and retrieval.
+            </summary>
+        </member>
+        <member name="T:Greenlogist.Domain.Repositories.IUserRepository">
+            <summary>
+            Interfaz de repositorio para la entidad 'User'.
+            Define los contratos para la persistencia de usuarios.
+            </summary>
+        </member>
+        <member name="T:Greenlogist.Domain.ValueObjects.Email">
+            <summary>
+            Objeto de valor para representar un correo electrónico.
+            Garantiza la validez del formato del correo electrónico.
+            </summary>
+        </member>
+        <member name="M:Greenlogist.Domain.ValueObjects.Email.IsValidEmail(System.String)">
+            <summary>
+            Valida el formato del correo electrónico.
+            </summary>
+            <param name="email">El string del correo electrónico a validar.</param>
+            <returns>True si el formato es válido, false en caso contrario.</returns>
+        </member>
+        <member name="T:Greenlogist.Domain.ValueObjects.Location">
+            <summary>
+            Value object to represent a geographical location.
+            </summary>
+        </member>
+        <member name="T:Greenlogist.Domain.ValueObjects.PasswordHash">
+            <summary>
+            Objeto de valor para almacenar el hash de una contraseña.
+            Esto asegura que las contraseñas nunca se manejen en texto plano en el dominio.
+            </summary>
+        </member>
+        <member name="T:Greenlogist.Domain.ValueObjects.Price">
+            <summary>
+            Value object to represent a product's price.
+            Ensures that the price is non-negative.
+            </summary>
+        </member>
+        <member name="T:Greenlogist.Domain.ValueObjects.Quantity">
+            <summary>
+            Value object to represent the quantity of a product with its unit of measure.
+            Ensures that the quantity is non-negative.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -2,3 +2,12 @@ C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\obj\D
 C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\obj\Debug\net8.0\Greenlogist.Domain.AssemblyInfoInputs.cache
 C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\obj\Debug\net8.0\Greenlogist.Domain.AssemblyInfo.cs
 C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\obj\Debug\net8.0\Greenlogist.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\bin\Debug\net8.0\Greenlogist.Domain.deps.json
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\bin\Debug\net8.0\Greenlogist.Domain.dll
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\bin\Debug\net8.0\Greenlogist.Domain.pdb
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\bin\Debug\net8.0\Greenlogist.Domain.xml
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\obj\Debug\net8.0\Greenlogist.Domain.dll
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\obj\Debug\net8.0\refint\Greenlogist.Domain.dll
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\obj\Debug\net8.0\Greenlogist.Domain.xml
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\obj\Debug\net8.0\Greenlogist.Domain.pdb
+C:\Users\Daniel\Documents\Proyectos\Greenlogist.Backend\Greenlogist.Domain\obj\Debug\net8.0\ref\Greenlogist.Domain.dll
